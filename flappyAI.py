@@ -42,8 +42,8 @@ class Bird:
         if displacement >= 16:
             displacement = 16
             
-        if d < 0:
-            d -= 2
+        if displacement < 0:
+            displacement -= 2
             
         self.y = self.y + displacement
         
@@ -97,6 +97,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+        bird.move()
         drawWindow(win, bird)
     
     pygame.quit()
